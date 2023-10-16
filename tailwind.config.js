@@ -7,6 +7,9 @@ module.exports = {
         "moderate-cyan": "hsl(176, 50%, 47%)",
         "dark-cyan": "hsl(176, 72%, 28%)",
         "dark-gray": "hsl(0, 0%, 48%)",
+        "light-gray": "#F4F4F4",
+        light: "#FAFAFA",
+        dark: "#2F2F2F",
       },
       screens: {
         lg: "992px",
@@ -14,7 +17,7 @@ module.exports = {
       },
       container: {
         padding: {
-          DEFAULT: "36px",
+          DEFAULT: "24px",
           md: "44px",
         },
       },

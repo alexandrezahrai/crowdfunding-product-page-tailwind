@@ -23,64 +23,140 @@
     <link rel="stylesheet" href="output.css" />
   </head>
   <body class="font-commissioner">
-    <h1 class="text-3xl font-bold text-dark-cyan">Hello World!</h1>
-    About Discover Get Started Mastercraft Bamboo Monitor Riser A beautiful &
-    handcrafted monitor stand to reduce neck and eye strain. Back this project
-    Bookmark $89,914 of $100,000 backed 5,007 total backers 56 days left About
-    this project The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
-    platform that elevates your screen to a more comfortable viewing height.
-    Placing your monitor at eye level has the potential to improve your posture
-    and make you more comfortable while at work, helping you stay focused on the
-    task at hand. Featuring artisan craftsmanship, the simplicity of design
-    creates extra desk space below your computer to allow notepads, pens, and
-    USB sticks to be stored under the stand. Bamboo Stand Pledge $25 or more You
-    get an ergonomic stand made of natural bamboo. You've helped us launch our
-    promotional campaign, and you'll be added to a special Backer member list.
-    101 left Select Reward Black Edition Stand Pledge $75 or more You get a
-    Black Special Edition computer stand and a personal thank you. You'll be
-    added to our Backer member list. Shipping is included. 64 left Select Reward
-    Mahogany Special Edition Pledge $200 or more You get two Special Edition
-    Mahogany stands, a Backer T-Shirt, and a personal thank you. You'll be added
-    to our Backer member list. Shipping is included. 0 left Out of Stock
+    <main class="min-h-screen w-full bg-light">
+      <header class="container mx-auto fixed inset-0 h-fit py-8 lg:py-11 z-50">
+        <div class="flex justify-between items-center">
+          <div>
+            <img src="assets/images/logo.svg" alt="logo" />
+          </div>
+          <nav class="hidden lg:block">
+            <ul class="flex items-center text-white gap-8">
+              <li>About</li>
+              <li>Discover</li>
+              <li>Get Started</li>
+            </ul>
+          </nav>
+          <div class="lg:hidden">
+            <img
+              src="assets/images/icon-hamburger.svg"
+              alt="hamburger icon"
+              class="h-full w-full object-cover object-center"
+            />
+          </div>
+        </div>
+      </header>
+      <section id="hero">
+        <div class="relative">
+          <div
+            class="absolute inset-0 w-full h-full bg-gradient-to-b from-black to-transparent"
+          ></div>
+          <div class="max-h-[400px] w-full hidden lg:block overflow-hidden">
+            <img
+              src="assets/images/image-hero-desktop.jpg"
+              alt="background image desktop"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div class="max-h-[315px] w-full lg:hidden overflow-hidden">
+            <img
+              src="assets/images/image-hero-mobile.jpg"
+              alt="background image desktop"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+        </div>
+      </section>
 
-    <!-- Selection modal start -->
+      <section
+        id="content"
+        class="container mx-auto relative -top-16 flex flex-col gap-8"
+      >
+        <!-- Content Block #1 -->
+        <div
+          class="max-w-[730px] w-full relative mx-auto bg-white border border-light-gray rounded-lg shadow-sm p-12 pt-16"
+        >
+          <div class="w-[60px] h-[60px] absolute inset-x-0 -top-[30px] mx-auto">
+            <img
+              src="assets/images/logo-mastercraft.svg"
+              alt="mastercraft logo"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <h1 class="heading-2 text-center mb-4">
+            Mastercraft Bamboo Monitor Riser
+          </h1>
+          <p class="text-center text-dark-gray">
+            A beautiful &amp; handcrafted monitor stand to reduce neck and eye
+            strain.
+          </p>
+          <div
+            class="flex flex-col gap-7 md:gap-0 md:flex-row justify-between items-center mt-9"
+          >
+            <button class="button-primary">
+              <span>Back this project</span>
+            </button>
 
-    Back this project Want to support us in bringing Mastercraft Bamboo Monitor
-    Riser out in the world? Pledge with no reward Choose to support us without a
-    reward if you simply believe in our project. As a backer, you will be signed
-    up to receive product updates via email. Bamboo Stand Pledge $25 or more You
-    get an ergonomic stand made of natural bamboo. You've helped us launch our
-    promotional campaign, and you'll be added to a special Backer member list.
-    101 left
+            <label
+              class="flex items-center relative w-max cursor-pointer select-none"
+            >
+              <span class="sr-only">Bookmark switch</span>
+              <input
+                id="bookmark-switch"
+                type="checkbox"
+                class="appearance-none transition-colors cursor-pointer w-[200px] h-[57px] rounded-full focus:outline-none focus:ring-1 focus:ring-offset-2 bg-light-gray focus:ring-offset-black focus:ring-blue-500 duration-[400ms] ease-in-out"
+              />
+              <span
+                class="bookmark-text bookmark absolute right-6 font-medium text-dark-gray"
+              >
+                Bookmark
+              </span>
+              <span
+                id="bookmark-toggle"
+                class="w-[57px] h-full left-0 absolute rounded-full transform transition bg-dark duration-200 ease-in-out"
+              >
+                <img
+                  src="assets/images/icon-bookmark.svg"
+                  class="h-full w-full object-cover object-center"
+              /></span>
+            </label>
+          </div>
+        </div>
 
-    <!-- Selected pledge start -->
-    Enter your pledge $25 Continue
-    <!-- Selected pledge end -->
+        <!-- Content Block #2 -->
+        <div
+          class="max-w-[730px] w-full relative mx-auto bg-white border border-light-gray rounded-lg shadow-sm p-12 pt-16"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x text-center">
+            <div class="stat-item">
+              <h1 class="heading-1 mb-1">
+                $89,914
+              </h1>
+              <p class="text-dark-gray">
+                of $100,000 backed
+              </p>
+            </div>
 
-    Black Edition Stand Pledge $75 or more You get a Black Special Edition
-    computer stand and a personal thank you. You'll be added to our Backer
-    member list. Shipping is included. 64 left
+            <div class="stat-item pt-6 md:pt-0">
+              <h1 class="heading-1 mb-1">
+                5,007
+              </h1>
+              <p class="text-dark-gray">
+                total backers
+              </p>
+            </div>
 
-    <!-- Selected pledge start -->
-    Enter your pledge $75 Continue
-    <!-- Selected pledge end -->
-
-    Mahogany Special Edition Pledge $200 or more You get two Special Edition
-    Mahogany stands, a Backer T-Shirt, and a personal thank you. You'll be added
-    to our Backer member list. Shipping is included. 0 left
-
-    <!-- Selected pledge  start -->
-    Enter your pledge $200 Continue
-    <!-- Selected pledge end -->
-
-    <!-- Selection modal end -->
-
-    <!-- Success modal start -->
-
-    Thanks for your support! Your pledge brings us one step closer to sharing
-    Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our
-    campaign is completed. Got it!
-
-    <!-- Success modal end -->
+            <div class="stat-item pt-6 md:pt-0">
+              <h1 class="heading-1 mb-1">
+                56
+              </h1>
+              <p class="text-dark-gray">
+                days left
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="index.js"></script>
   </body>
 </html>
