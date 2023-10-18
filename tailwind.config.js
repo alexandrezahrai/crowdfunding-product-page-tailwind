@@ -10,6 +10,7 @@ module.exports = {
         "light-gray": "#F4F4F4",
         light: "#FAFAFA",
         dark: "#2F2F2F",
+        "gray-border": "#DBDBDB",
       },
       screens: {
         lg: "992px",

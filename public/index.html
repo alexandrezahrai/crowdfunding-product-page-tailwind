@@ -24,7 +24,7 @@
   </head>
   <body class="font-commissioner">
     <main class="min-h-screen w-full bg-light">
-      <header class="container mx-auto fixed inset-0 h-fit py-8 lg:py-11 z-50">
+      <header class="container mx-auto absolute top-0 h-fit py-8 lg:py-11 z-50">
         <div class="flex justify-between items-center">
           <div>
             <img src="assets/images/logo.svg" alt="logo" />
@@ -48,7 +48,7 @@
       <section id="hero">
         <div class="relative">
           <div
-            class="absolute inset-0 w-full h-full bg-gradient-to-b from-black to-transparent"
+            class="absolute inset-0 w-full h-full bg-gradient-to-b from-black from-5% to-transparent to-95%"
           ></div>
           <div class="max-h-[400px] w-full hidden lg:block overflow-hidden">
             <img
@@ -71,7 +71,7 @@
         id="content"
         class="container mx-auto relative -top-16 flex flex-col gap-8"
       >
-        <!-- Content Block #1 -->
+        <!-- Intro Block -->
         <div
           class="max-w-[730px] w-full relative mx-auto bg-white border border-light-gray rounded-lg shadow-sm p-12 pt-16"
         >
@@ -92,7 +92,7 @@
           <div
             class="flex flex-col gap-7 md:gap-0 md:flex-row justify-between items-center mt-9"
           >
-            <button class="button-primary">
+            <button class="open-modal-btn button-primary">
               <span>Back this project</span>
             </button>
 
@@ -103,7 +103,7 @@
               <input
                 id="bookmark-switch"
                 type="checkbox"
-                class="appearance-none transition-colors cursor-pointer w-[200px] h-[57px] rounded-full focus:outline-none focus:ring-1 focus:ring-offset-2 bg-light-gray focus:ring-offset-black focus:ring-blue-500 duration-[400ms] ease-in-out"
+                class="appearance-none transition-colors cursor-pointer w-[200px] h-[57px] rounded-full focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-2 bg-light-gray focus-visible:ring-offset-black focus-visible:ring-blue-500 duration-[400ms] ease-in-out"
               />
               <span
                 class="bookmark-text bookmark absolute right-6 font-medium text-dark-gray"
@@ -122,39 +122,377 @@
           </div>
         </div>
 
-        <!-- Content Block #2 -->
+        <!-- Stats Block -->
         <div
-          class="max-w-[730px] w-full relative mx-auto bg-white border border-light-gray rounded-lg shadow-sm p-12 pt-16"
+          class="max-w-[730px] w-full relative mx-auto bg-white border border-light-gray rounded-lg shadow-sm p-12"
         >
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x text-center">
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x text-center"
+          >
             <div class="stat-item">
               <h1 class="heading-1 mb-1">
-                $89,914
+                $<span id="money-raised-value">89,914</span>
               </h1>
-              <p class="text-dark-gray">
-                of $100,000 backed
-              </p>
+              <p class="text-dark-gray">of $100,000 backed</p>
             </div>
 
             <div class="stat-item pt-6 md:pt-0">
-              <h1 class="heading-1 mb-1">
-                5,007
-              </h1>
-              <p class="text-dark-gray">
-                total backers
-              </p>
+              <h1 id="backers-value" class="heading-1 mb-1">5,007</h1>
+              <p class="text-dark-gray">total backers</p>
             </div>
 
             <div class="stat-item pt-6 md:pt-0">
-              <h1 class="heading-1 mb-1">
-                56
-              </h1>
-              <p class="text-dark-gray">
-                days left
-              </p>
+              <h1 class="heading-1 mb-1">56</h1>
+              <p class="text-dark-gray">days left</p>
             </div>
           </div>
+
+          <div
+            class="rounded-full overflow-hidden w-full h-3 relative bg-light-gray mt-10"
+          >
+            <span
+              id="progress-bar"
+              class="h-full w-3/4 bg-moderate-cyan absolute rounded-full"
+            ></span>
+          </div>
         </div>
+
+        <!-- Rewards Block -->
+        <div
+          class="max-w-[730px] w-full relative mx-auto bg-white border border-light-gray rounded-lg shadow-sm p-7 md:p-12"
+        >
+          <h2 class="heading-3">About this project</h2>
+
+          <p class="text-dark-gray my-8 leading-[30px]">
+            The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
+            platform that elevates your screen to a more comfortable viewing
+            height. Placing your monitor at eye level has the potential to
+            improve your posture and make you more comfortable while at work,
+            helping you stay focused on the task at hand.
+          </p>
+          <p class="text-dark-gray mt-8 leading-[30px]">
+            Featuring artisan craftsmanship, the simplicity of design creates
+            extra desk space below your computer to allow notepads, pens, and
+            USB sticks to be stored under the stand.
+          </p>
+
+          <ul class="flex flex-col gap-10 mt-10">
+            <!-- Reward #1 -->
+            <li
+              class="p-6 md:p-9 md:pt-11 rounded-xl overflow-hidden border border-gray-border"
+            >
+              <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0"
+              >
+                <h3 class="heading-3">Bamboo Stand</h3>
+                <p class="text-moderate-cyan">Pledge $25 or more</p>
+              </div>
+              <p class="text-dark-gray leading-[30px] my-6">
+                You get an ergonomic stand made of natural bamboo. You've helped
+                us launch our promotional campaign, and you'll be added to a
+                special Backer member list.
+              </p>
+              <div
+                class="flex flex-col md:flex-row items-start justify-between md:items-center gap-6 md:gap-0"
+              >
+                <p
+                  class="text-dark-gray leading-[30px] flex items-center gap-2"
+                >
+                  <span class="heading-2 text-black">101</span> left
+                </p>
+                <button
+                  type="button"
+                  class="open-modal-btn select-reward-btn button-primary"
+                >
+                  Select Reward
+                </button>
+              </div>
+            </li>
+            <!-- Reward #2 -->
+            <li
+              class="p-6 md:p-9 md:pt-11 rounded-xl overflow-hidden border border-gray-border"
+            >
+              <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0"
+              >
+                <h3 class="heading-3">Black Edition Stand</h3>
+                <p class="text-moderate-cyan">Pledge $75 or more</p>
+              </div>
+              <p class="text-dark-gray leading-[30px] my-6">
+                You get a Black Special Edition computer stand and a personal
+                thank you. You'll be added to our Backer member list. Shipping
+                is included.
+              </p>
+              <div
+                class="flex flex-col md:flex-row items-start justify-between md:items-center gap-6 md:gap-0"
+              >
+                <p
+                  class="text-dark-gray leading-[30px] flex items-center gap-2"
+                >
+                  <span class="heading-2 text-black">64</span> left
+                </p>
+                <button
+                  type="button"
+                  class="open-modal-btn select-reward-btn button-primary"
+                >
+                  Select Reward
+                </button>
+              </div>
+            </li>
+            <!-- Reward #3 -->
+            <li
+              class="p-6 md:p-9 md:pt-11 rounded-xl overflow-hidden border border-gray-border relative"
+            >
+              <div
+                class="absolute inset-0 w-full h-full bg-white opacity-50"
+              ></div>
+              <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0"
+              >
+                <h3 class="heading-3">Mahogany Special Edition</h3>
+                <p class="text-moderate-cyan">Pledge $200 or more</p>
+              </div>
+              <p class="text-dark-gray leading-[30px] my-6">
+                You get two Special Edition Mahogany stands, a Backer T-Shirt,
+                and a personal thank you. You'll be added to our Backer member
+                list. Shipping is included.
+              </p>
+              <div
+                class="flex flex-col md:flex-row items-start justify-between md:items-center gap-6 md:gap-0"
+              >
+                <p
+                  class="text-dark-gray leading-[30px] flex items-center gap-2"
+                >
+                  <span class="heading-2 text-black">0</span> left
+                </p>
+                <button type="button" class="select-reward-btn button-nostock">
+                  Out of Stock
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Modal -->
+        <dialog
+          id="modal"
+          class="max-w-[730px] w-full relative mx-auto bg-white border border-light-gray rounded-lg shadow-custom p-7 md:p-12"
+        >
+          <button type="button" class="close-modal-btn absolute top-6 right-6">
+            <img
+              src="assets/images/icon-close-modal.svg"
+              alt="close icon"
+              class="w-full h-full object-cover object-center"
+            />
+          </button>
+
+          <div id="no-reward-initial">
+            <h1 class="heading-2">Back this project</h1>
+            <p class="text-dark-gray my-4 leading-[30px]">
+              Want to support us in bringing Mastercraft Bamboo Monitor Riser
+              out in the world?
+            </p>
+
+            <div class="forms-wrapper mt-10 flex flex-col gap-8">
+              <!-- Form #1 -->
+              <form
+                id="no-reward-form"
+                onsubmit="validateForm(event)"
+                method="post"
+              >
+                <div
+                  class="p-6 md:p-9 md:pt-11 rounded-xl overflow-hidden border border-gray-border relative"
+                >
+                  <div class="flex gap-6">
+                    <input
+                      type="radio"
+                      name="ftype"
+                      required
+                      class="radio h-6 w-6 flex-shrink-0"
+                    />
+                    <label for="ftype" class="sr-only"
+                      >Pledge with no reward</label
+                    >
+
+                    <div class="flex flex-col gap-4">
+                      <h4 class="heading-4">Pledge with no reward</h4>
+                      <p class="text-dark-gray leading-[30px]">
+                        Choose to support us without a reward if you simply
+                        believe in our project. As a backer, you will be signed
+                        up to receive product updates via email.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="submit-reward pt-6 mt-6 md:pt-9 md:mt-9 border-t-2 flex justify-end"
+                  >
+                    <button type="submit" class="button-primary">
+                      Continue
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- Form #2 -->
+              <form
+                id="bamboo-stand-form"
+                onsubmit="validateForm(event)"
+                method="post"
+              >
+                <div
+                  class="p-6 md:p-9 md:pt-11 rounded-xl overflow-hidden border border-gray-border relative"
+                >
+                  <div class="flex gap-6">
+                    <input
+                      type="radio"
+                      name="ftype"
+                      required
+                      class="radio h-6 w-6 flex-shrink-0"
+                    />
+                    <label for="ftype" class="sr-only">Bamboo Stand</label>
+
+                    <div class="flex flex-col gap-4">
+                      <div class="flex justify-between items-center">
+                        <h4 class="heading-4">
+                          Bamboo Stand
+                          <span class="text-moderate-cyan ml-4"
+                            >Pledge $25 or more</span
+                          >
+                        </h4>
+                        <p class="font-bold">
+                          101
+                          <span class="text-dark-gray font-normal">left</span>
+                        </p>
+                      </div>
+                      <p class="text-dark-gray leading-[30px]">
+                        You get an ergonomic stand made of natural bamboo.
+                        You've helped us launch our promotional campaign, and
+                        you'll be added to a special Backer member list.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="submit-reward pt-6 mt-6 md:pt-9 md:mt-9 border-t-2 flex flex-col md:flex-row justify-between items-start"
+                  >
+                    <p class="text-dark-gray leading-[30px]">
+                      Enter your pledge
+                    </p>
+                    <div class="flex gap-4 mt-6 md:mt-0">
+                      <div class="currency-wrapper relative">
+                        <span class="absolute top-[29%] left-6 text-dark-gray"
+                          >$</span
+                        >
+                        <input
+                          type="number"
+                          id="bamboo-quantity"
+                          name="quantity"
+                          min="25"
+                          max=""
+                          placeholder="25"
+                          required
+                          class="rounded-full border border-gray-border max-w-[150px] pl-10 pr-6 h-full w-full"
+                        />
+                      </div>
+                      <button type="submit" class="button-primary">
+                        Continue
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <!-- Form #3 -->
+              <form
+                id="black-edition-form"
+                onsubmit="validateForm(event)"
+                method="post"
+              >
+                <div
+                  class="p-6 md:p-9 md:pt-11 rounded-xl overflow-hidden border border-gray-border relative"
+                >
+                  <div class="flex gap-6">
+                    <input
+                      type="radio"
+                      name="ftype"
+                      required
+                      class="radio h-6 w-6 flex-shrink-0 bg-red-500"
+                    />
+                    <label for="ftype" class="sr-only">Bamboo Stand</label>
+
+                    <div class="flex flex-col gap-4">
+                      <div class="flex justify-between items-center">
+                        <h4 class="heading-4">
+                          Black Edition Stand Pledge
+                          <span class="text-moderate-cyan ml-4"
+                            >Pledge $75 or more</span
+                          >
+                        </h4>
+                        <p class="font-bold">
+                          64
+                          <span class="text-dark-gray font-normal">left</span>
+                        </p>
+                      </div>
+                      <p class="text-dark-gray leading-[30px]">
+                        You get a Black Special Edition computer stand and a
+                        personal thank you. You'll be added to our Backer member
+                        list. Shipping is included.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="submit-reward pt-6 mt-6 md:pt-9 md:mt-9 border-t-2 flex flex-col md:flex-row justify-between items-start"
+                  >
+                    <p class="text-dark-gray leading-[30px]">
+                      Enter your pledge
+                    </p>
+                    <div class="flex gap-4 mt-6 md:mt-0">
+                      <div class="currency-wrapper relative">
+                        <span class="absolute top-[29%] left-6 text-dark-gray"
+                          >$</span
+                        >
+                        <input
+                          type="number"
+                          id="black-edition-quantity"
+                          name="quantity"
+                          min="25"
+                          max=""
+                          placeholder="25"
+                          required
+                          class="rounded-full border border-gray-border max-w-[150px] pl-10 pr-6 h-full w-full"
+                        />
+                      </div>
+                      <button type="submit" class="button-primary">
+                        Continue
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div id="sucess-message" class="text-center hidden">
+            <div class="w-20 h-20 mx-auto mb-12">
+              <img
+                src="assets/images/icon-check.svg"
+                alt="check icon"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <h2 class="heading-2">Thanks for your support!</h2>
+            <p class="text-dark-gray mt-4 mb-8 leading-[30px]">
+              Your pledge brings us one step closer to sharing Mastercraft
+              Bamboo Monitor Riser worldwide. You will get an email once our
+              campaign is completed. Got it!
+            </p>
+            <button
+              type="button"
+              class="close-modal-btn button-primary w-fit mx-auto"
+            >
+              Got it!
+            </button>
+          </div>
+        </dialog>
       </section>
     </main>
     <script src="index.js"></script>
